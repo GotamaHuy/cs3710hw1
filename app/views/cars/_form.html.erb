@@ -12,18 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :make %>
-    <%= form.text_field :make %>
-  </div>
-
-  <div class="field">
     <%= form.label :model %>
     <%= form.text_field :model %>
   </div>
 
   <div class="field">
+    <%= form.label :make %>
+    <%= form.collection_select :make_id, @makes, :id, :name %>
+  </div>
+
+  <div class="field">
     <%= form.label :vin %>
     <%= form.text_field :vin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :part_id %>
+    <%= form.collection_select(:part_ids, @parts, :id, :name) %>
   </div>
 
   <div class="actions">
